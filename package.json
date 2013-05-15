@@ -1,0 +1,15 @@
+{
+  "name": "wtf-tag-squash",
+  "version": "0.0.0",
+  "description": "Squash a JavaScript file down to a single line for TagManager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "private",
+  "bin": {
+    "squash": "bin/squash"
+  }
+}
