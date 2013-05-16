@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 function squash(content){
-	return content.replace(/\n/g, '\\n').replace(/'/g, '\'');
+	return content.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/'/g, '\\\'');
 };
 
 var files = process.argv.slice(2);
