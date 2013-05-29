@@ -1,6 +1,6 @@
 {
   "name": "wtf-tag-squash",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Squash a JavaScript file down to a single line for TagManager.",
   "main": "index.js",
   "scripts": {
