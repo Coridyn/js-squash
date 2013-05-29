@@ -11,5 +11,8 @@
   "license": "private",
   "bin": {
     "squash": "bin/squash"
+  },
+  "dependencies": {
+    "lodash": "~1.2.1"
   }
 }

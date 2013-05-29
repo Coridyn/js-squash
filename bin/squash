@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-require('../index.js');
+var fs = require('fs');
+var jssquash = require('../index.js');
+
+var files = process.argv.slice(2);
+files.forEach(function(file){
+	var content = fs.readFileSync(file, {encoding: 'utf8'});
+	console.log(jssquash.squash(content));
+});

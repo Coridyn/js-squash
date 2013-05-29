@@ -1,11 +1,25 @@
-var fs = require('fs');
+var _ = require('lodash');
 
-function squash(content){
-	return content.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/'/g, '\\\'');
+module.exports.squash = function(content, options){
+	// Allow single or double quotes.
+	options = _.defaults({}, {
+		escapeSingle: true,
+		escapeDouble: true
+	}, options);
+	
+	var c = content
+		.replace(/\\/g, '\\\\')
+		.replace(/\n/g, '\\n');
+	
+	if (options.escapeSingle){
+		// Replace single quotes:
+		c = c.replace(/'/g, '\\\'');
+	}
+	
+	if (options.escapeDouble){
+		// Replace double quotes:
+		c = c.replace(/"/g, '\\"');
+	}
+		
+	return c;
 };
-
-var files = process.argv.slice(2);
-files.forEach(function(file){
-	var content = fs.readFileSync(file, {encoding: 'utf8'});
-	console.log(squash(content));
-});
